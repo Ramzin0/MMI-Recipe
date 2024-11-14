@@ -1,5 +1,6 @@
 @import "abstracts/variables";
 @import "vendors/bootstrap";
+@import "../node_modules/lightbox2/dist/css/lightbox.min.css";
 @import "base/typography";
 @import "layout/header";
 @import "layout/footer";
@@ -7,4 +8,5 @@
 @import "components/button";
 @import "components/recipe-card";
 @import "pages/login";
+@import "pages/recipe";
 @import "themes/theme";
