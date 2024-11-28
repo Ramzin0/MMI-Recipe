@@ -10369,7 +10369,7 @@ form label {
     color: #393e4f;
     border: 0; }
 
-body#page-recipe .recipe-image {
+#page-recipe .recipe-image {
   border: solid 3px #FFF;
   height: 150px;
   background-repeat: no-repeat;
@@ -10378,9 +10378,18 @@ body#page-recipe .recipe-image {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-  body#page-recipe .recipe-image a {
+  #page-recipe .recipe-image a {
     display: block;
     height: 150px; }
+#page-recipe .recipe-features {
+  list-style: none;
+  padding: 0;
+  color: #FFF; }
+  #page-recipe .recipe-features li {
+    margin-bottom: 10px; }
+    #page-recipe .recipe-features li i {
+      text-align: center;
+      width: 27px; }
 
 body {
   background-color: #393e4f; }

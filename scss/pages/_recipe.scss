@@ -1,4 +1,4 @@
-body#page-recipe {
+#page-recipe {
     .recipe-image {
         border: solid 3px #FFF;
         height: 150px;
@@ -12,6 +12,21 @@ body#page-recipe {
         a {
             display: block;
             height: 150px;
+        }
+    }
+
+    .recipe-features {
+        list-style: none;
+        padding: 0;
+        color: #FFF;
+
+        li {
+            margin-bottom: 10px;
+
+            i {
+                text-align: center;
+                width: 27px;
+            }
         }
     }
 }
