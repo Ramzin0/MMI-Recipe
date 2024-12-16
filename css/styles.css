@@ -10371,7 +10371,7 @@ form label {
 
 #page-recipe .recipe-image {
   border: solid 3px #FFF;
-  height: 150px;
+  height: 350px;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -10380,7 +10380,7 @@ form label {
   background-size: cover; }
   #page-recipe .recipe-image a {
     display: block;
-    height: 150px; }
+    height: 350px; }
 #page-recipe .recipe-features {
   list-style: none;
   padding: 0;

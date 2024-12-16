@@ -19,7 +19,7 @@
             <div class="col-lg-9">
                 <p>Are you guys hungry?</p>
                 <p>Well your in the right place!</p>
-                <a href="categories.html" class="btn btn-studenteat">Browse recipes</a>
+                <a href="index.php?p=categories" class="btn btn-studenteat">Browse recipes</a>
             </div>
             <div class="col-lg-3">
                 <img src="./images/plate.png" alt="Plate of food" />

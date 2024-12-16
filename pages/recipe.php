@@ -1,3 +1,7 @@
+<?php
+$Recipe = new Recipe($Conn);
+$recipe_data = $Recipe->getRecipe($_GET['id']);
+?>
 <!DOCTYPE html>
 
 <head>
@@ -13,74 +17,34 @@
 </head>
 
 <body id="page-recipe">
-    <div class="container">
-        <h1 class="pb-2">Food</h1>
-        <div class="row">
-            <div class="col-md-6">
+<div class="container">
+    <h1 class="mb-4 pb-2"><?php echo $recipe_data['recipe_name']; ?></h1>
+    <div class="row">
+        <div class="col-md-6">
+            <?php if (!empty($recipe_data['images'])) { ?>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-ella-olsson-572949-1640772.jpg');">
-                            <a href="recipe-images/pexels-ella-olsson-572949-1640772.jpg" data-lightbox="recipe-imgs"></a>
+                    <?php foreach ($recipe_data['images'] as $image) { ?>
+                        <div class="col-md-4">
+                            <div class="recipe-image mb-4" style="background-image: url('./recipe-images/<?php echo $image['recipe_image']; ?>'); height: 150px; background-size: cover; background-position: center;">
+                                <a href="./recipe-images/<?php echo $image['recipe_image']; ?>" data-lightbox="recipe-imgs"></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-dana-tentis-118658-262959.jpg');">
-                            <a href="recipe-images/pexels-dana-tentis-118658-262959.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-robinstickel-70497.jpg');">
-                            <a href="recipe-images/pexels-robinstickel-70497.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-chevanon-323682.jpg');">
-                            <a href="recipe-images/pexels-chevanon-323682.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-ella-olsson-572949-1640777.jpg');">
-                            <a href="recipe-images/pexels-ella-olsson-572949-1640777.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/meal-two.jpg');">
-                            <a href="meal-two.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/meal-one.jpg');">
-                            <a href="recipe-images/meal-one.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-dana-tentis-118658-262959.jpg');">
-                            <a href="recipe-images/pexels-dana-tentis-118658-262959.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recipe-image mb-4" style="background-image: url('recipe-images/pexels-robinstickel-70497.jpg');">
-                            <a href="recipe-images/pexels-robinstickel-70497.jpg" data-lightbox="recipe-imgs"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <p style="font-family: Lorem Ipsum; font-size: 16px;">Lots of yummy food</p>
-                <p style="font-family: Lorem Ipsum; font-size: 16px;">It really is a lot of yummy food, more than you can believe</p>
-                <ul class="recipe-features">
-                    <li><i class="far fa-clock"></i> 20 Min</li>
-                    <li><i class="fas fa-users"></i> 4 Servings</li>
-                    <li><i class="fas fa-dollar-sign"></i> Budget</li>
-                    <li><i class="fas fa-tags"></i> salad, healthy, vegetarian</li>
-                </ul>
-            </div>
+            <?php } ?>
+        </div>
+        <div class="col-md-6">
+            <p><?php echo $recipe_data['recipe_instructions']; ?></p>
+            <ul class="recipe-features">
+                <li><i class="far fa-clock"></i> <?php echo $recipe_data['recipe_time']; ?></li>
+                <li><i class="fas fa-users"></i> <?php echo $recipe_data['recipe_servings']; ?> Servings</li>
+                <li><i class="fas fa-dollar-sign"></i> <?php echo $recipe_data['recipe_price']; ?></li>
+                <li><i class="fas fa-tags"></i> <?php echo $recipe_data['recipe_tags']; ?></li>
+            </ul>
         </div>
     </div>
+</div>
+
 
     <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>

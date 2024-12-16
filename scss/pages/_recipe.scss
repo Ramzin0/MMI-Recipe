@@ -1,7 +1,7 @@
 #page-recipe {
     .recipe-image {
         border: solid 3px #FFF;
-        height: 150px;
+        height: 350px;
         background-repeat: no-repeat;
         background-position: center center;
         -webkit-background-size: cover;
@@ -11,7 +11,7 @@
 
         a {
             display: block;
-            height: 150px;
+            height: 350px;
         }
     }
 
@@ -29,4 +29,4 @@
             }
         }
     }
-}
+};
